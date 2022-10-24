@@ -1,90 +1,93 @@
 <template>
-	<div class="content">
+ <v-container class="content">
+  <v-row>
+   <v-col cols="3">
 		<figure>
-			<img class="user-img" src="#" alt="user photo"/>
-		</figure>
+     <v-img class="user-img" 
+      src="#" 
+      alt="user photo"></v-img>
+    </figure>
+   </v-col>
+   <v-col cols="9">
 		<header>
-			<h2 class="name">{{ name }}</h2>
-			<h3 class="user-name">{{ userName }}</h3>
-		</header>
-		<p class="text">{{ text }}</p>
-		<div class="buttons">
-			<button class="comment">{{ comments }}</button>
-			<button class="retweet">{{ retweets }}</button>
-			<button class="like">{{ likes }}</button>
-			<button class="share">Compartilhar</button>
-		</div>
-	</div>
+     <h2 class="name">{{ name }}</h2>
+     <h3 class="user-name">{{ userName }}</h3>
+    </header>
+    <p class="text-md-body-1 text-no-wrap">{{ text }}</p>
+    <div class="buttons">
+     <v-btn small class="comment">
+      {{ comments }}
+     </v-btn>
+     <v-btn small class="retweet">
+      {{ retweets }}
+     </v-btn>
+     <v-btn small class="like">
+      {{ likes }}
+     </v-btn>
+     <v-btn small class="share">
+      0
+     </v-btn>
+    </div>
+   </v-col>
+  </v-row>
+ </v-container>
 </template>
 
 <script>
 export default {
-  name: 'PostComponent',
-	data() {
-		return {
-			name: "Fulano",
-			userName: "@fulano69",
-			text: "Lorem ipsum",
-			likes: 0,
-			retweets: 0,
-			comments: 0
-		}
-	}
+ name: 'PostView',
+ data() {
+  return {
+   name: "Fulano",
+   userName: "@fulano69",
+   text: "Lorem ipsum",
+   likes: 0,
+   retweets: 0,
+   comments: 0
+  }
+ }
 }
 </script>
 
 <style scoped>
 * {
 	margin: 0;
-	padding: 0;
+  padding: 0;
+  font-size: 0.85rem;
 }
 
 .content {
-	display: grid;
-	grid-template-columns: 0.6fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 2fr 1fr;
-	grid-template-areas:
-		"userImg header header ."
-		"userImg postText postText postText"
-		"userImg buttons buttons buttons";
-	align-items: center;
-	column-gap: 1vw;
-	padding-left: 2vh;
-	padding-right: 2vh;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	height: 15vh;
+ margin-top: 2vh;
+ margin-bottom: 2vh;
 }
 
 header {
-	grid-area: header;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 figure {
-	grid-area: userImg;
-	height: 100%;
+  height: 100%;
 	display: flex;
-	align-items: center;
+  align-items: center;
+  margin-right: 2vw;
 }
 
-h2, h3 { font-size: 0.85rem; }
+.user-img {
+  border: 1px solid black;
+}
 
-.text {
-	grid-area: postText;
-	font-size: 0.9rem;
+p {
+ margin-top: 3%;
 }
 
 .buttons {
-	grid-area: buttons;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+ display: flex;
+ justify-content: space-between;
 }
 
-button { 
+.buttons * { 
 	padding: 1%;
 	border: none;
 }
