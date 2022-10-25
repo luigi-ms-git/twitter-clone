@@ -15,22 +15,49 @@
     </header>
     <p class="text-md-body-1 text-no-wrap">{{ text }}</p>
     <div class="buttons">
-     <v-btn small class="comment">
+      <v-btn small 
+        dark  
+        icon
+        class="comment">
+       <v-icon color="blue-grey lighten-5" 
+         dark>
+         mdi-comment-outline
+       </v-icon>
       {{ comments }}
      </v-btn>
-     <v-btn small class="retweet">
+     <v-btn small 
+       dark 
+       icon
+       class="retweet">
+       <v-icon color="blue-grey lighten-5" 
+         dark>
+         mdi-repeat-variant
+       </v-icon>
       {{ retweets }}
      </v-btn>
-     <v-btn small class="like">
+     <v-btn small 
+       dark 
+       icon
+       class="like">
+       <v-icon color="blue-grey lighten-5" 
+         dark>
+         mdi-heart-outline
+       </v-icon>
       {{ likes }}
      </v-btn>
-     <v-btn small class="share">
-      0
+     <v-btn small 
+       dark 
+       icon
+       class="share">
+       <v-icon color="blue-grey lighten-5" 
+         dark>
+         mdi-share-variant-outline
+       </v-icon>
      </v-btn>
     </div>
    </v-col>
   </v-row>
- </v-container>
+  </v-container>
 </template>
 
 <script>
@@ -59,6 +86,7 @@ export default {
 .content {
  margin-top: 2vh;
  margin-bottom: 2vh;
+ color: #ECEFF1;
 }
 
 header {
@@ -89,6 +117,7 @@ p {
 
 .buttons * { 
 	padding: 1%;
-	border: none;
+  border: none;
+  color: #ECEFF1;
 }
 </style>

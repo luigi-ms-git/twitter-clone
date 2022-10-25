@@ -1,7 +1,7 @@
 <template>
  <v-container>
   <PostView />
-  <v-divider></v-divider>
+  <v-divider dark></v-divider>
   </v-container>
 </template>
 
@@ -9,11 +9,13 @@
   import PostView from './Post.vue';
  
   export default {
-    name: 'HelloWorld',
-    data: () => ({
-    }),
+    name: 'MainPage',
+    data: () => ({}),
     components: {
      PostView
     }
   }
 </script>
+
+<style scoped>
+</style>
