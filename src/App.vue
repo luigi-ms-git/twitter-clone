@@ -1,7 +1,7 @@
 <template>
  <v-app>
   <v-app-bar app
-   color="blue darken-4"
+   color="blue-grey darken-4"
    dark>
    <h1>Twitter Clone</h1>
   </v-app-bar>
@@ -15,28 +15,32 @@
       background-color="blue-grey darken-4"
       dark>
       <v-tab>
-       <v-icon color="blue-grey lighten-5" 
-         dark>
-         mdi-home
-       </v-icon>
+        <router-link to="/">
+          <v-icon color="blue-grey lighten-5" dark>
+            mdi-home
+          </v-icon>
+        </router-link>
       </v-tab>
       <v-tab>
-       <v-icon color="blue-grey lighten-5" 
-         dark>
-         mdi-magnify
-        </v-icon>
+        <router-link to="/explore">
+          <v-icon color="blue-grey lighten-5" dark>
+            mdi-magnify
+          </v-icon>
+        </router-link>
       </v-tab>
       <v-tab>
-       <v-icon color="blue-grey lighten-5" 
-         dark>
-         mdi-bell
-       </v-icon>
+        <router-link to="/notifications">
+          <v-icon color="blue-grey lighten-5" dark>
+            mdi-bell
+          </v-icon>
+        </router-link>
       </v-tab>
       <v-tab>
-       <v-icon color="blue-grey lighten-5" 
-         dark>
-         mdi-email
-       </v-icon>
+        <router-link to="/messages">
+          <v-icon color="blue-grey lighten-5" dark>
+            mdi-email
+          </v-icon>
+        </router-link>
       </v-tab>
     </v-tabs>
   </v-footer>
@@ -58,4 +62,6 @@ h1 { font-size: 1.5rem; }
 main { background-color: #263238; }
 
 footer { background-color: #0D47A1; }
+
+a { text-decoration: none; }
 </style>

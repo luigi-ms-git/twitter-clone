@@ -1,15 +1,12 @@
 <template>
  <v-container>
-  <PostView />
+   <p>Notifications not build yet</p>
   <v-divider dark></v-divider>
   </v-container>
 </template>
 
 <script>
-import PostView from '../components/Post.vue';
- 
   export default {
-    name: 'MainView',
-    components: { PostView }
+    name: 'NotificationsView'
   }
 </script>
