@@ -4,8 +4,9 @@
    <v-col cols="3">
 		<figure>
      <v-img class="user-img" 
-      src="#" 
-      alt="user photo"></v-img>
+      :src="imgSrc" 
+      :alt="userName+' profile photo'">
+    </v-img>
     </figure>
    </v-col>
    <v-col cols="9">
@@ -57,21 +58,21 @@
     </div>
    </v-col>
   </v-row>
-  </v-container>
+  <v-divider id="divider" dark></v-divider>
+</v-container>
 </template>
 
 <script>
 export default {
  name: 'PostView',
- data() {
-  return {
-   name: "Fulano",
-   userName: "@fulano69",
-   text: "Lorem ipsum",
-   likes: 0,
-   retweets: 0,
-   comments: 0
-  }
+ props: {
+   imgSrc: String,
+   name: String,
+   userName: String,
+   text: String,
+   likes: Number,
+   retweets: Number,
+   comments: Number
  }
 }
 </script>
@@ -102,13 +103,9 @@ figure {
   margin-right: 2vw;
 }
 
-.user-img {
-  border: 1px solid black;
-}
+.user-img { border: 1px solid black; }
 
-p {
- margin-top: 3%;
-}
+p { margin-top: 3%; }
 
 .buttons {
  display: flex;
@@ -120,4 +117,6 @@ p {
   border: none;
   color: #ECEFF1;
 }
+
+#divider { margin-top: 5%; }
 </style>
