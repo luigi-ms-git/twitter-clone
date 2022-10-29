@@ -24,18 +24,29 @@
       return { 
         tweets: [],
         errorHappened: false,
-        errorMsg: ""
+        errorMsg: "",
+        cacheStore: window.localStorage
+      }
+    },
+    methods: {
+      saveOnCache(res){
+        res.forEach(post => {
+          this.cacheStore.setItem(post.id, JSON.stringify(post));
+        });
       }
     },
     created(){
       axios.get("https://dummyapi.io/data/v1/post?limit=10", {
         headers: { 'app-id': "6355d8554657e021295c3329" }
       })
-      .then(res => this.tweets = res.data.data)
+      .then(res => this.saveOnCache(res.data.data))
       .catch(rej => {
         this.errorHappened = true;
         this.errorMsg = rej;
       });
+    },
+    mounted(){
+     console.log(Object.keys(this.cacheStore));
     }
   }
 </script>
