@@ -33,6 +33,11 @@
         res.forEach(post => {
           this.cacheStore.setItem(post.id, JSON.stringify(post));
         });
+      },
+      getFromCache(){
+        return Object.entries(this.cacheStore).map(([id, obj]) => {
+          if(id.startsWith("60d21b")) return obj;
+        });
       }
     },
     created(){
@@ -46,7 +51,12 @@
       });
     },
     mounted(){
-     console.log(Object.keys(this.cacheStore));
+      console.log("Mounted");
+      this.tweets = this.getFromCache();
+    },
+    updated(){
+      console.log("Updated");
+      this.tweets = this.getFromCache();
     }
   }
 </script>
